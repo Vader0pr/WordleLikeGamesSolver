@@ -122,6 +122,7 @@ namespace WordleLikeGamesSolver.Loldle
         }
         public static ChampionsList LoadChampionList()
         {
+            if (!Directory.Exists("Loldle")) Directory.CreateDirectory("Loldle");
             try
             {
                 ChampionsList loadedChampions = JsonConvert.DeserializeObject<ChampionsList>(File.ReadAllText("Loldle\\Champions.json"));
